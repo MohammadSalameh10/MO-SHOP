@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MOSHOP.DAL.Models;
 using MOSHOP.DAL.Repositories.Interfaces;
@@ -60,9 +55,9 @@ namespace MOSHOP.DAL.Repositories.Classes
         }
 
 
-        public async Task<bool> ChangeUserRoleAsync(string userId,string roleName)
+        public async Task<bool> ChangeUserRoleAsync(string userId, string roleName)
         {
-          var user = await _userManager.FindByIdAsync(userId);
+            var user = await _userManager.FindByIdAsync(userId);
             if (user == null) return false;
 
             var currentRoles = await _userManager.GetRolesAsync(user);

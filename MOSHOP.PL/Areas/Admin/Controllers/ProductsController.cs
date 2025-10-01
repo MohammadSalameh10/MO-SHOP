@@ -1,8 +1,5 @@
-﻿using System.Security.Claims;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using MOSHOP.BLL.Services.Classes;
 using MOSHOP.BLL.Services.Interfaces;
 using MOSHOP.DAL.DTO.Requests;
 
@@ -23,7 +20,7 @@ namespace MOSHOP.PL.Areas.Admin.Controllers
         [HttpGet("")]
         public IActionResult GetAll([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 5)
         {
-           var result =  _productService.GetAllProducts(Request, false, pageNumber, pageSize);
+            var result = _productService.GetAllProducts(Request, false, pageNumber, pageSize);
             return Ok(result);
         }
 

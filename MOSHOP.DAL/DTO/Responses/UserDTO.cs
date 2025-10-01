@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace MOSHOP.DAL.DTO.Responses
 {
@@ -14,6 +10,6 @@ namespace MOSHOP.DAL.DTO.Responses
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public bool EmailConfirmed { get; set; }
-        public string RoleName { get; set; }  
+        public string RoleName { get; set; }
     }
 }

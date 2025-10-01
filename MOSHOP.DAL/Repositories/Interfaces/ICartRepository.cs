@@ -1,6 +1,4 @@
-﻿
-
-using MOSHOP.DAL.Models;
+﻿using MOSHOP.DAL.Models;
 
 namespace MOSHOP.DAL.Repositories.Interfaces
 {

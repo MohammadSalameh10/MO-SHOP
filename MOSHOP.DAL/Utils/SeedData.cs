@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MOSHOP.DAL.Data;
 using MOSHOP.DAL.Models;
@@ -44,9 +39,9 @@ namespace MOSHOP.DAL.Utils
             if (!await _context.Brands.AnyAsync())
             {
                 await _context.Brands.AddRangeAsync(
-                     new Brand { Name = "Samsung", MainImage = "SamsungBrand.png",status=Status.Active },
+                     new Brand { Name = "Samsung", MainImage = "SamsungBrand.png", status = Status.Active },
                      new Brand { Name = "Apple", MainImage = "AppleBrand.png", status = Status.Active },
-                     new Brand { Name = "Nike", MainImage = "NikeBrand.jpg",status = Status.Active }
+                     new Brand { Name = "Nike", MainImage = "NikeBrand.jpg", status = Status.Active }
                      );
             }
             await _context.SaveChangesAsync();
@@ -87,11 +82,9 @@ namespace MOSHOP.DAL.Utils
                     UserName = "Abaker",
                     EmailConfirmed = true
                 };
-                await _userManager.CreateAsync(user1, "Pass@1212");
-                await _userManager.CreateAsync(user2, "Pass@1212");
-                await _userManager.CreateAsync(user3, "Pass@1212");
-
-
+                await _userManager.CreateAsync(user1, "Pass@123123");
+                await _userManager.CreateAsync(user2, "Pass@123123");
+                await _userManager.CreateAsync(user3, "Pass@123123");
 
                 await _userManager.AddToRoleAsync(user1, "Admin");
                 await _userManager.AddToRoleAsync(user2, "SuperAdmin");

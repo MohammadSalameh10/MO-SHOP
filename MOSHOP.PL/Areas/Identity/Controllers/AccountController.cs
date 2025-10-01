@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using MOSHOP.BLL.Services.Interfaces;
 using MOSHOP.DAL.DTO.Requests;
 using MOSHOP.DAL.DTO.Responses;
@@ -21,7 +20,7 @@ namespace MOSHOP.PL.Areas.Identity.Controllers
 
         public async Task<ActionResult<UserResponse>> Register(RegisterRequest registerRequest)
         {
-            var result = await _authenticationService.RegisterAsync(registerRequest,Request);
+            var result = await _authenticationService.RegisterAsync(registerRequest, Request);
             return Ok(result);
         }
 

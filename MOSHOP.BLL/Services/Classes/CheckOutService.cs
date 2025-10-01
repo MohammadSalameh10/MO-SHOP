@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using MOSHOP.BLL.Services.Interfaces;
 using MOSHOP.DAL.DTO.Requests;
@@ -23,7 +18,7 @@ namespace MOSHOP.BLL.Services.Classes
         private readonly IProductRepository _productRepository;
         public CheckOutService(ICartRepository cartRepository,
             IOrderRepository orderRepository, IEmailSender email,
-            IOrderItemRepository orderItemRepository,IProductRepository productRepository)
+            IOrderItemRepository orderItemRepository, IProductRepository productRepository)
         {
             _cartRepository = cartRepository;
             _orderRepository = orderRepository;
@@ -44,7 +39,7 @@ namespace MOSHOP.BLL.Services.Classes
 
                 var carts = await _cartRepository.GetUserCartAsync(order.UserId);
                 var orderItems = new List<OrderItem>();
-                var productUpdate = new List<(int ProductId,int quantity)>();
+                var productUpdate = new List<(int ProductId, int quantity)>();
                 foreach (var cartItem in carts)
                 {
                     var orderItem = new OrderItem

@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Mapster;
+﻿using Mapster;
 using MOSHOP.BLL.Services.Interfaces;
-using MOSHOP.DAL.DTO;
+using MOSHOP.DAL.DTO.Requests;
 using MOSHOP.DAL.Models;
 using MOSHOP.DAL.Repositories.Interfaces;
 
@@ -15,7 +10,7 @@ namespace MOSHOP.BLL.Services.Classes
     {
         private readonly IOrderRepository _orderRepository;
         private readonly IReviewRepository _reviewRepository;
-        public ReviewService(IOrderRepository orderRepository,IReviewRepository reviewRepository)
+        public ReviewService(IOrderRepository orderRepository, IReviewRepository reviewRepository)
         {
             _orderRepository = orderRepository;
             _reviewRepository = reviewRepository;
@@ -31,7 +26,7 @@ namespace MOSHOP.BLL.Services.Classes
 
             var review = reviewRequest.Adapt<Review>();
 
-            await _reviewRepository.AddReviewAsync(review,userId);
+            await _reviewRepository.AddReviewAsync(review, userId);
             return true;
         }
     }

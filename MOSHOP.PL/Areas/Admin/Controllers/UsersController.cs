@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MOSHOP.BLL.Services.Interfaces;
 using MOSHOP.DAL.DTO.Requests;
@@ -45,6 +44,7 @@ namespace MOSHOP.PL.Areas.Admin.Controllers
             }
             return Ok(new { message = "User blocked successfully." });
         }
+        
 
         [HttpPatch("UnBlock/{userId}")]
         public async Task<IActionResult> UnBlockUser([FromRoute] string userId)

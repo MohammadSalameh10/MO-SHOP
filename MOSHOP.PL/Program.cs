@@ -1,11 +1,8 @@
-
 using System.Text;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using MOSHOP.BLL.Services.Classes;
 using MOSHOP.BLL.Services.Interfaces;
@@ -15,7 +12,6 @@ using MOSHOP.DAL.Repositories.Classes;
 using MOSHOP.DAL.Repositories.Interfaces;
 using MOSHOP.DAL.Utils;
 using MOSHOP.PL.Utils;
-using Scalar;
 using Scalar.AspNetCore;
 using Stripe;
 namespace MOSHOP.PL
@@ -118,7 +114,7 @@ namespace MOSHOP.PL
             app.UseAuthentication();
 
             app.UseCors(userPolicy);
-           
+
             app.UseAuthorization();
 
             app.UseStaticFiles();

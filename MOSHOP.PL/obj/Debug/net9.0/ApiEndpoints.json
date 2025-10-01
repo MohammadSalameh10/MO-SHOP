@@ -291,7 +291,18 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -353,6 +364,16 @@
         "IsRequired": false
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MOSHOP.PL.Areas.Admin.Controllers.ReportsController",
+    "Method": "GenerateProductReport",
+    "RelativePath": "api/Admin/Reports/GenerateProductReport",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -607,7 +628,7 @@
     "Parameters": [
       {
         "Name": "reviewRequest",
-        "Type": "MOSHOP.DAL.DTO.ReviewRequest",
+        "Type": "MOSHOP.DAL.DTO.Requests.ReviewRequest",
         "IsRequired": true
       }
     ],

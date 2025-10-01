@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MOSHOP.BLL.Services.Interfaces;
+﻿using MOSHOP.BLL.Services.Interfaces;
 using MOSHOP.DAL.Models;
 using MOSHOP.DAL.Repositories.Interfaces;
 
@@ -12,8 +7,9 @@ namespace MOSHOP.BLL.Services.Classes
     public class OrderService : IOrderService
     {
         private readonly IOrderRepository _orderRepository;
-        public OrderService(IOrderRepository orderRepository) {
-        
+        public OrderService(IOrderRepository orderRepository)
+        {
+
             _orderRepository = orderRepository;
         }
         public async Task<Order?> AddOrderAsync(Order order)
@@ -28,7 +24,7 @@ namespace MOSHOP.BLL.Services.Classes
 
         public Task<List<Order>> GetByStatusAsync(OrderStatus status)
         {
-           return _orderRepository.GetByStatusAsync(status);
+            return _orderRepository.GetByStatusAsync(status);
         }
 
         public Task<List<Order>> GetOrderByUserAsync(string userId)

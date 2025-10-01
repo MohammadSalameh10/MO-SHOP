@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using MOSHOP.DAL.Data;
 using MOSHOP.DAL.Models;
 using MOSHOP.DAL.Repositories.Interfaces;
@@ -56,7 +51,7 @@ namespace MOSHOP.DAL.Repositories.Classes
             return await _context.Orders.Include(o => o.OrderItems).
                 AnyAsync(e => e.UserId == userId && e.Status == OrderStatus.Approved &&
                 e.OrderItems.Any(oi => oi.ProductId == productId));
-                
+
         }
 
     }

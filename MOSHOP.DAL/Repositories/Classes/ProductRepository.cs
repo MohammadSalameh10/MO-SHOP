@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using MOSHOP.DAL.Data;
 using MOSHOP.DAL.Models;
 using MOSHOP.DAL.Repositories.Interfaces;
@@ -39,7 +34,7 @@ namespace MOSHOP.DAL.Repositories.Classes
 
         public List<Product> GetAllProductsWithImage()
         {
-            return _context.Products.Include(p => p.SubImages).Include(p =>p.Reviews).ThenInclude(r=>r.User).ToList();
+            return _context.Products.Include(p => p.SubImages).Include(p => p.Reviews).ThenInclude(r => r.User).ToList();
         }
     }
 }
