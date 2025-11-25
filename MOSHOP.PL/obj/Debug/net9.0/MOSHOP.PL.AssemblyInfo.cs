@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("bc45a8ae-925e-4aaa-a2e5-0ef59b983ac4")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("MOSHOP.PL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+adbd6c5e69507f9764c124783a5f664f29c5c1e1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+78341ddfc91d24475c3f28ce12fd8498921080f6")]
 [assembly: System.Reflection.AssemblyProductAttribute("MOSHOP.PL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MOSHOP.PL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
